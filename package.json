@@ -13,6 +13,7 @@
     "ejs": "^2.6.2",
     "express": "^4.17.1",
     "express-validator": "^6.1.1",
+    "mongojs": "^2.6.0",
     "nodemon": "^1.19.1"
   }
 }
