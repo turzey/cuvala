@@ -1,0 +1,20 @@
+ <% include partials/header.ejs %>
+        <h1>Welcome to Cuvala! - relocate anything anywhere</h1>
+            <form method="POST" action="database/search">
+                <label for="">Supported areas:</label><br>
+                <input type="text" name="Areas" id="">
+                <br>
+                <label for="">Capacity (m3): </label><br>
+                <label for="">Max: </label> <input type="number" name="maxCap" id=""> <label for="">Minimum: </label> <input type="number" name="minCap">
+                <br>
+                <label for="">Small Parcels: </label> <input type="checkbox" name="parcels">
+                <label for="">Palets: </label> <input type="checkbox" name="palets">
+                <label for="">Large objects: </label> <input type="checkbox" name="bigstuff">
+                <br>
+                <input type="radio" name="instant" value="instant" checked> Instant Booking! <br>
+                <input type="radio" name="instant" value="enquiry"> Enquiry Required <br>
+                <label for="">Price: </label> <input type="number" name="price" id="">
+                <input type="submit" value="Submit">
+
+            </form>
+   <% include partials/footer.ejs %>

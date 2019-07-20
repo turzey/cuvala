@@ -7,13 +7,16 @@
                 <label for="">To: </label><br>
                 <input type="text" name="toLocation" id="">
                 <br>
-                <input type="submit" value="Submit">
+                <label for="">What: </label><br>
+                <input type="text" name="toLocation" id="">
+                <br>
+                <input type="submit" value="Go">
             </form>
         <h2   style="color:blue;margin-left:30px;">  : </h2>
         <h1>Services we  offer :</h1>
         <ul>
             <% serviceProviders.forEach(function(sp){ %>
-                <li>package delivering<%= sp.name %></li>
+                <li><%= sp.otherfield %></li>
             <% }) %>
             <li>Hosting</li>
         </ul>
