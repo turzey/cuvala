@@ -11,6 +11,20 @@ const app = express();
 }
 app.use(logger);
 */
+const serviceProviders = [
+    {
+        id : 1,
+        name : 'A Big truck Company or'
+    },
+    {
+        id : 2,
+        name : 'A small moving company or even'
+    },
+    {
+        id : 3,
+        name : 'An individual with means of relocating an object'  
+    },
+];
 
 // View Engine
 app.set('view engine', 'ejs');
@@ -24,9 +38,15 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,'public')));
 
 app.get('/',function(req, res){
-    res.render('index.ejs');
+    res.render('index.ejs',{
+        title : 'Welcome to Cuvala! move stuff around - Home',
+        serviceProviders : serviceProviders
+    });
 });
 
+app.post('/database/search', function(req, res){
+    console.log(req.body.fromLocation);
+})
 app.listen(3000,function(){
     console.log('Server running at localhost:3000...');
 });
