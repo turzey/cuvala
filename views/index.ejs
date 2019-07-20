@@ -9,10 +9,12 @@
                 <br>
                 <input type="submit" value="Submit">
             </form>
-        <h2>You can earn money if you are : </h2>
+        <h2   style="color:blue;margin-left:30px;">  : </h2>
+        <h1>Services we  offer :</h1>
         <ul>
             <% serviceProviders.forEach(function(sp){ %>
-                <li><%= sp.name %></li>
+                <li>package delivering<%= sp.name %></li>
             <% }) %>
+            <li>Hosting</li>
         </ul>
   <% include partials/footer.ejs %>
