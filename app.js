@@ -1,6 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
+const mongojs = require('mongojs');
+const db = mongojs('cuvala',['tListings'])
 
 //const expressValidator = require('express-validator');
 const app = express();
@@ -39,9 +41,11 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,'public')));
 
 app.get('/',function(req, res){
-    res.render('index.ejs',{
-        title : 'Welcome to Cuvala! move stuff around - Home',
-        serviceProviders : serviceProviders
+    db.tListings.find(function(err,docs){
+        res.render('index.ejs',{
+            title : 'Welcome to Cuvala! move stuff around - Home',
+            serviceProviders : docs
+        });
     });
 });
 
