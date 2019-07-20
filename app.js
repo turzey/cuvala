@@ -3,13 +3,14 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const app = express();
-// sample middleware :
-// const logger = function(req, res, next){
-//     console.log('Logging...');
-//     next();
-// }
 
-// app.use(logger);
+// sample for custom middleware :
+/* const logger = function(req, res, next){
+    console.log('Logging...');
+    next();
+}
+app.use(logger);
+*/
 
 // View Engine
 app.set('view engine', 'ejs');
@@ -23,7 +24,7 @@ app.use(bodyParser.urlencoded({extended:false}));
 app.use(express.static(path.join(__dirname,'public')));
 
 app.get('/',function(req, res){
-    res.send('Hello');
+    res.render('index.ejs');
 });
 
 app.listen(3000,function(){
