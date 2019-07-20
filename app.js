@@ -2,7 +2,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
 
+//const expressValidator = require('express-validator');
 const app = express();
+
 
 // sample for custom middleware :
 /* const logger = function(req, res, next){
@@ -25,7 +27,6 @@ const serviceProviders = [
         name : 'An individual with means of relocating an object'  
     },
 ];
-
 // View Engine
 app.set('view engine', 'ejs');
 app.set('views',path.join(__dirname, 'views'));
@@ -44,9 +45,11 @@ app.get('/',function(req, res){
     });
 });
 
-app.post('/database/search', function(req, res){
-    console.log(req.body.fromLocation);
-})
+app.post('/database/search', (req, res) => {
+        console.log(req.body.fromLocation);
+        console.log(req.body.toLocation);
+});
+
 app.listen(3000,function(){
     console.log('Server running at localhost:3000...');
 });
