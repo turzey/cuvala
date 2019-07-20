@@ -40,6 +40,12 @@ app.use(bodyParser.urlencoded({extended:false}));
 // set static path
 app.use(express.static(path.join(__dirname,'public')));
 
+app.get('/providers', function(req,res){
+    res.render('providers.ejs',{
+        title : 'Submit your listing to book clients!'
+    });
+});
+
 app.get('/',function(req, res){
     db.tListings.find(function(err,docs){
         res.render('index.ejs',{

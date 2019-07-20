@@ -1,0 +1,12 @@
+ <% include partials/header.ejs %>
+        <h1>Welcome to Cuvala! - relocate anything anywhere</h1>
+            <form method="POST" action="database/search">
+                <label for="">I want to move stuff from: </label><br>
+                <input type="text" name="fromLocation" id="">
+                <br>
+                <label for="">To: </label><br>
+                <input type="text" name="toLocation" id="">
+                <br>
+                <input type="submit" value="Submit">
+            </form>
+   <% include partials/footer.ejs %>
