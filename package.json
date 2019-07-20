@@ -9,6 +9,8 @@
   "author": "Michalis Dimitriou",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "*",
+    "express": "^4.17.1",
+    "nodemon": "^1.19.1"
   }
 }
