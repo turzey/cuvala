@@ -11,6 +11,10 @@ const app = express();
 
 // app.use(logger);
 
+// View Engine
+app.set('view engine', 'ejs');
+app.set('views',path.join(__dirname, 'views'));
+
 // Body Parser Middleware
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
@@ -23,5 +27,5 @@ app.get('/',function(req, res){
 });
 
 app.listen(3000,function(){
-    console.log('testing');
+    console.log('Server running at localhost:3000...');
 });
